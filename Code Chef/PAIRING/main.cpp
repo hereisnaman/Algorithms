@@ -1,5 +1,4 @@
 #include<iostream>
-#include<math.h>
 using namespace std;
 
 int main()
@@ -16,14 +15,14 @@ int main()
             cin>>a[i][0]>>a[i][1];
         }
         select[m-1]=1;
-        for(i=0;i<m;i++)
+        for(i=m-1;i>=0;i--)
         {
             flag=1;            
             for(j=m-1;j>=0;j--)
             {
                 if(select[j]==1)
                 {
-                    if(a[i][0]==a[m-1][0]||a[i][0]==a[j][1]||a[i][1]==a[j][0]||a[i][1]==a[j][1])
+                    if(a[i][0]==a[j][0]||a[i][0]==a[j][1]||a[i][1]==a[j][0]||a[i][1]==a[j][1])
                     {
                         flag=0;
                         break;
