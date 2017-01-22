@@ -30,11 +30,11 @@ int main()
                 }
             }
             if(flag)
-            {
                 select[i]=1;
-                cout<<i<<" ";
-            }
         }
-        cout<<m-1<<endl;
+        for(i=0;i<m;i++)
+            if(select[i]==1)
+                cout<<i<<" ";
+            cout<<endl;
     }
 }
