@@ -1,35 +1,26 @@
-#include<iostream>
-#include<cassert>
-#include<stdio.h>
-#include<string.h>
-#include<math.h>
+#include <iostream>
 using namespace std;
-
 int main()
 {
-    long long int t,i,sum;
-    char str[1000];
-    cin>>t;
-    assert(t);
-    cin.ignore();
-    while(t--)
-    {
-        fgets(str,1000,stdin);
-        sum=strlen(str);
-        for(i=0;i<strlen(str)-2;i++)
-        {
-            if(str[i]==str[i+1])
-                continue;
-            else if((str[i]-str[i+1])<0)
-                sum+=str[i+1]-str[i];
-            else
-                sum+=122-str[i]+str[i+1]-96;
-        }
-        cout<<sum<<" "<<11*(strlen(str)-1);
-        if(sum>(11*(strlen(str)-1)))
-            cout<<"NO"<<endl;
-        else
-            cout<<"YES"<<endl;
-    }
-    return 0;
-}
+	int t;
+	cin>>t;
+	while(t--)
+	{
+		string s;
+		cin>>s;
+		long int p=s.length();
+		long int ctr=2;
+		for(long int i=1;i<p;i++)
+	   {	
+		if(s[i-1]<=s[i])
+		ctr+=s[i]-s[i-1]+1;
+		else
+		ctr+=26-(s[i-1]-s[i])+1;
+       }
+       
+	if(ctr<=11*p)
+	cout<<"YES"<<endl;
+	else
+	cout<<"NO"<<endl;
+    }  
+} 
