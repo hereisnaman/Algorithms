@@ -9,6 +9,7 @@ int main()
     while(t--)
     {
         cin>>n>>m;
+        assert(m<=n&&n<=1000)
         int jobdone[n],jobrem[n-m];
         for(i=0;i<m;i++)
         {
